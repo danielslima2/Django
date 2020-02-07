@@ -25,11 +25,20 @@
         <div>{{x.autor}}</div>
         <div>{{x.text}}</div>
         <div>{{x.date}}</div>
-        
-
+        <img src="{{x.imagem.url}}" >
+        <a href="http://localhost:8000/posts/{{x.id}}/apagar">
+        <button>Apagar post</button>
+    </a>
+    <a href="http://localhost:8000/posts/{{x.id}}/editar">
+        <button>Editar post</button>
+    </a>
     </div>
     {% endfor %}
-    
+    <div>
+        <a href="http://localhost:8000/criarpost">
+        <button > Criar post</button>
+        </a>
+    </div>
 </body>
 
 </html>
