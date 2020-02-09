@@ -1,5 +1,4 @@
 {% load widget_tweaks %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
     <title>Document</title>
     <style>
         
-        #formcriar{
+        #formeditar{
             border: 2px solid black;
             background-color: red;
             padding: 5px;
@@ -20,13 +19,13 @@
             </style>
 </head>
 <body>
-    <h1>Criar postagem</h1>
-    <form id="formcriar" action="" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <p>{% render_field form.autor %}</p>
-        <p>{% render_field form.text %}</p>
-        <p>{% render_field form.imagem %}</p>
-        <input type="submit" value="Enviar">
+    <h1>Edite seu usuario</h1>
+    <form id = "formeditar" action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>Nome:{% render_field form.username %}</p>
+    <p>Email:{% render_field form.email %}</p>
+    <p>Senha:{% render_field form.password %}</p>
+    <input type="submit" value="Editar">
     </formi>
 </body>
 </html>

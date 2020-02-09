@@ -1,4 +1,3 @@
-{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        
-#formeditar{
+
+#formapagar{
     border: 2px solid black;
     background-color: red;
     padding: 5px;
@@ -19,12 +18,11 @@
     </style>
 </head>
 <body>
-    <h1>Edite seu post</h1>
-    <form id="formeditar" action="" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    <p>Texto:{% render_field form.text %}</p>
-    <p>Foto:{% render_field form.imagem %}</p>
-    <input type="submit" value="Editar">
-    </form id>
+    <h1>Voce deseja realmente apagar o usuario</h1>
+    <form  id="formapagar" action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Apagar">
+        </form>
 </body>
 </html>

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from usuario.models import User
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from usuario.forms import CreateUserForm
 from django.urls import reverse_lazy
 
@@ -13,4 +13,16 @@ class UserCreateView(CreateView):
     model = User
     template_name = 'Usuario/create.html'
     form_class = CreateUserForm
+    success_url = reverse_lazy('usuario:listar_usuarios')
+
+class UserUpdateView(UpdateView):
+    model = User
+    template_name = 'Usuario/editarusuario.html'
+    fields = ['username', 'email','password']
+    success_url = reverse_lazy('usuario:listar_usuarios')
+    
+class UserDeleteView(DeleteView):
+    model= User
+    template_name = 'Usuario/apagarusuario.html'
+    context_object_name = 'usuario'
     success_url = reverse_lazy('usuario:listar_usuarios')

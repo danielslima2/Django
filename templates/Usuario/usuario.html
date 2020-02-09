@@ -10,11 +10,20 @@
 
     <h1>USUARIOS</h1>
     
+    
     <div>
 
+    <div>{{user.username}}</div>
     <div>{{user.email}}</div>
     <div>{{user.created_at}}</div>
-
+    <a href="http://localhost:8000/usuario/{{user.id}}/editar">
+    <button>
+        EDITE O USUSARIO
+    </button></a>
+    <a href="http://localhost:8000/usuario/{{user.id}}/apagar">
+        <button>
+            APAGUE O USUSARIO
+        </button></a>
 </div>
 
 </body>

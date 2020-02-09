@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-<style>
-#posts{
-    border:1px solid black;
-    padding: 10px;
-}
-
-
-
-</style>
+    <style>
+        #posts {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,18 +22,19 @@
         <div>{{x.autor}}</div>
         <div>{{x.text}}</div>
         <div>{{x.date}}</div>
-        <img src="{{x.imagem.url}}" >
+        <img src="{{x.imagem.url}}">
         <a href="http://localhost:8000/posts/{{x.id}}/apagar">
-        <button>Apagar post</button>
-    </a>
-    <a href="http://localhost:8000/posts/{{x.id}}/editar">
-        <button>Editar post</button>
-    </a>
+            <button>Apagar post</button>
+        </a>
+        <a href="http://localhost:8000/posts/{{x.id}}/editar">
+            <button>Editar post</button>
+
+        </a>
     </div>
     {% endfor %}
     <div>
         <a href="http://localhost:8000/criarpost">
-        <button > Criar post</button>
+            <button> Criar post</button>
         </a>
     </div>
 </body>
