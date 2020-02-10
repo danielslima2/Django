@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+#index{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}        
+    </style>
 </head>
 <body>
+    <div id="index">
     <a href="{% url 'core:contato' %}">CONTATO</a>
-    <h2>OI</h2>
+    <a href="http://localhost:8000/posts">POSTS</a>
     {{pj}}
+    </div>
 </body>
 </html>

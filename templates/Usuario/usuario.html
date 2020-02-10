@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+#user{
+    border: 2px solid black;
+    padding: 10px;
+    width: min-content;
+    margin-top:30px;
+    background-color: limegreen;
+    
+}
+body{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+    align-items: center;
+}
+#criar{
+    margin-top: 30px;
+}
+    </style>
 </head>
 <body>
 
     <h1>USUARIOS</h1>
     
-    
-    <div>
+    {% for user in users%}
+    <div id="user">
 
     <div>{{user.username}}</div>
-    <div>{{user.email}}</div>
     <div>{{user.created_at}}</div>
     <a href="http://localhost:8000/usuario/{{user.id}}/editar">
     <button>
@@ -24,7 +43,17 @@
         <button>
             APAGUE O USUSARIO
         </button></a>
+    <a href="http://localhost:8000/usuario/{{user.id}}/detalhes">
+        <button>
+            DETALHES DO USUARIO
+        </button>
+    </a>
 </div>
-
+{% endfor %}
+<div id="criar">
+    <a href="http://localhost:8000/criarusuario">
+    <button>CRIAR USUARIO</button>
+    </a>
+</div>
 </body>
 </html>

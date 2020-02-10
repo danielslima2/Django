@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detalhes do Usuario</h1>
+    
+    <div>
+        <div>Olá,{{user.username}}</div>
+        <div>{{user.email}}</div>
+        <div>Suas postagens:</div>
+        {% for post in users.post.all %}
+            {% if post.imagem %}
+            <img src="{{post.imagem.url}}" alt="">
+            {% else %}
+            <div>nao tem imagem</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+</body>
+</html>

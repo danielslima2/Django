@@ -11,10 +11,28 @@
             border: 1px solid black;
             padding: 10px;
         }
+        #navbar{
+            border: 2px solid black;
+        }
+        body{
+            margin:0;
+            padding: 0;
+        }
     </style>
 </head>
 
 <body>
+    <div id="navbar">
+        {% if not request.user.is_authenticated %}
+        <ul>
+            <li> <a href="{% url 'usuario:login_usuario' %}">Login</a></li>
+            <li> <a href="{% url 'usuario:criar_usuario' %}">SingUp</a></li>
+        {% else %}
+            <li> Olá, <a href="{% url 'usuario:detalhes_usuario' request.user.id %}"> {{request.user.username}}</a></li>
+            <li> <a href="{% url 'usuario:logout_usuario' %}"> Logout</a></li>
+        {% endif %}
+        </ul>
+    </div>
     <h1>POSTS</h1>
     {%  for x in posts%}
     <div id="posts">
@@ -22,7 +40,13 @@
         <div>{{x.autor}}</div>
         <div>{{x.text}}</div>
         <div>{{x.date}}</div>
+        {% if x.imagem %}
         <img src="{{x.imagem.url}}">
+        {% else %} 
+          <div>Nao tem imagem</div>    
+        {% endif %}
+    
+
         <a href="http://localhost:8000/posts/{{x.id}}/apagar">
             <button>Apagar post</button>
         </a>
